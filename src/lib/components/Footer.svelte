@@ -3,11 +3,9 @@
 		<div class="footer__text">
 			© {new Date().getFullYear()} Warframe Weakness. All rights reserved.
 		</div>
+		<a href="https://ko-fi.com/wentallout">Love this project? Support me</a>
+		
 		<a class="footer__link" href="https://github.com/wentallout">github.com/wentallout</a>
-		<a
-			class="footer__link"
-			href="https://browse.wf/profile#account=6567713e04824463a50413a5&platform=pc&tab=fashion">
-			My Warframe Profile</a>
 		<a
 			href="https://www.reddit.com/r/Warframe/comments/1l3jbku/updated_warframe_weakness_cheatsheet/">
 			Inspired by ShuddupAndPlay</a>

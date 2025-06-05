@@ -2,6 +2,7 @@
 	<h1 class="nav__logo">Warframe Weakness</h1>
 	<a href="https://warframe-weakness.netlify.app/" class="nav__url"
 		>warframe-weakness.netlify.app</a>
+	<a class="nav__url" href="https://github.com/wentallout/warframe-weakness">Source code</a>
 </nav>
 
 <style>
