@@ -66,6 +66,17 @@
 			return 0;
 		});
 	}
+
+	function getHighlightedHTML(text: string, term: string): string {
+		if (!term.trim() || !text) {
+			return text;
+		}
+		const cleanTerm = term.trim();
+		// Escape regex special characters in the search term
+		const escapedTerm = cleanTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+		const regex = new RegExp(`(${escapedTerm})`, 'gi');
+		return text.replace(regex, '<span class="search-highlight">$1</span>');
+	}
 </script>
 
 <SearchWeaknessTable bind:value={searchTerm} />
@@ -118,7 +129,7 @@
 							{/if}
 							<a target="_blank" href={factionInfoMap[faction as Faction].wikiUrl}>
 								<span class="weakness-table__cell-content">
-									{faction}
+									{@html getHighlightedHTML(faction, searchTerm)}
 								</span>
 							</a>
 						</td>
@@ -138,7 +149,7 @@
 										alt={profile.weakTo[i]}
 										class="weakness-table__icon" />
 									<span class="weakness-table__type-text weakness-table__cell-content">
-										{profile.weakTo[i]}
+										{@html getHighlightedHTML(profile.weakTo[i], searchTerm)}
 									</span>
 								{/if}
 							</td>
@@ -159,7 +170,7 @@
 										alt={profile.resists[i]}
 										class="weakness-table__icon" />
 									<span class="weakness-table__type-text weakness-table__cell-content">
-										{profile.resists[i]}
+										{@html getHighlightedHTML(profile.resists[i], searchTerm)}
 									</span>
 								{/if}
 							</td>
@@ -182,7 +193,7 @@
 		border-collapse: collapse;
 		width: 100%;
 		max-width: 100%;
-		color: var(--text-900, #a7ecf6);
+		color: var(--text-900);
 		overflow-x: auto;
 		border: 1px solid var(--background-200);
 		table-layout: fixed;
@@ -251,7 +262,7 @@
 		height: 24px;
 		width: 24px;
 		vertical-align: middle;
-		margin-right: var(--space-xs);
+		margin-right: var(--space-2xs);
 		display: inline-block;
 	}
 	.weakness-table__type-text {
@@ -272,7 +283,7 @@
 		transition: color 0.2s;
 	}
 	.weakness-table__sort-btn:hover {
-		color: var(--accent-700, #0c102f);
+		color: var(--accent-700);
 	}
 
 	.weakness-table__cell--resistance {
@@ -321,5 +332,11 @@
 
 	.weakness-table__cell--resistance .weakness-table__icon {
 		filter: invert(1);
+	}
+
+	:global(.search-highlight) {
+		background-color: var(--primary-300);
+		color: var(--text-900);
+		font-weight: 600;
 	}
 </style>
