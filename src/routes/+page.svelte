@@ -106,7 +106,6 @@
 						<td
 							class="weakness-table__cell weakness-table__cell--faction"
 							class:weakness-table__cell--faction-highlight={hoveredType &&
-								profile.weakTo.length > 0 &&
 								profile.weakTo.includes(hoveredType)}
 							class:weakness-table__cell--faction-dim={hoveredType &&
 								!profile.weakTo.includes(hoveredType) &&
@@ -117,7 +116,7 @@
 									alt={faction + ' logo'}
 									class="weakness-table__icon" />
 							{/if}
-							<a href={factionInfoMap[faction as Faction].wikiUrl}>
+							<a target="_blank" href={factionInfoMap[faction as Faction].wikiUrl}>
 								<span class="weakness-table__cell-content">
 									{faction}
 								</span>
@@ -312,6 +311,12 @@
 
 	.weakness-table__cell--faction {
 		font-weight: 600;
+		transition: ease 0.3s;
+
+		&:hover {
+			text-decoration: underline;
+			color: var(--primary-500);
+		}
 	}
 
 	.weakness-table__cell--resistance .weakness-table__icon {

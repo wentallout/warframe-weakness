@@ -2,16 +2,12 @@
 	let { value = $bindable(''), ...props } = $props();
 </script>
 
-<div
-	class="search-bar-container"
-	style="display: flex; justify-content: center; margin-bottom: 1rem;">
-	<input
-		type="text"
-		placeholder="Search faction or element..."
-		bind:value
-		class="search-bar"
-		{...props} />
-</div>
+<input
+	type="text"
+	placeholder="Search faction or element..."
+	bind:value
+	class="search-bar"
+	{...props} />
 
 <style>
 	.search-bar {
@@ -20,5 +16,6 @@
 		border: 1px solid var(--background-200);
 		border-radius: 4px;
 		padding: var(--space-s);
+		margin-bottom: var(--space-s);
 	}
 </style>

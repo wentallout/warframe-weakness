@@ -17,5 +17,6 @@
 <style>
 	main {
 		margin-bottom: var(--space-m);
+		min-height: 100dvh;
 	}
 </style>

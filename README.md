@@ -1,38 +1,33 @@
-# sv
+# Warframe Weakness - wawe
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+URL: warframe-weakness.netlify.app
 
-## Creating a project
+## What is this? Why did I create this?
 
-If you're seeing this, you've probably already done this step. Congrats!
+I want to have a dynamic, interactive way to see each faction weakness in Warframe. Now some people would say this is redundant since a good build will kill anyways and you don't need to worry about every faction and I'm like, we are in Warframe, we play to min-max, not to win.
 
-```bash
-# create a new project in the current directory
-npx sv create
+## Features
 
-# create a new project in my-app
-npx sv create my-app
-```
+- 12 Factions with weaknesses and resistance
+- Sort/Search table
+
+## Todo list
+
+- Weapon builds recommendation (so if user click Corrosive they will see a list of great Corrosive gun builds, I might need help from Overframe devs if I want to make this work?)
+- Tooltip that shows info when user hover a table cell
+- Refactor codes
+- Better Animation
+- Add more Graphics
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## Credits
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- Icons, Info: https://wiki.warframe.com
+- Reddit Post by ShuddupAndPlay: https://www.reddit.com/r/Warframe/comments/1l3jbku/updated_warframe_weakness_cheatsheet/
