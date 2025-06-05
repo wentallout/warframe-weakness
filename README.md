@@ -27,6 +27,10 @@ Once you've installed dependencies with `npm install` (or `pnpm install` or `yar
 npm run dev
 ```
 
+## Feedback/Contribute
+
+Feel free to send me your constructive feedback and create pull requests.
+
 ## Credits
 
 - Icons, Info: https://wiki.warframe.com
